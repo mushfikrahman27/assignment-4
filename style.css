@@ -115,6 +115,7 @@ body {
 
  
 .job-card {
+    position: relative; 
     background: #FFFFFF;
     border: 1px solid #F1F2F4;
     border-radius: 8px;
@@ -126,26 +127,20 @@ body {
 
 .trash-icon {
     box-sizing: border-box;
-position: absolute;
- width: 32px;
- height: 32px;
-    right: 24px;
-    top: 24px;
- background: #FFFFFF;
+    width: 32px;
+    height: 32px;
+    background: #FFFFFF;
     border: 1px solid #F1F2F4;
     border-radius: 50%;
-    display: flex;
+    display: flex !important; 
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    color: #64748B;
     transition: all 0.2s ease;
 }
 
-
 .trash-icon:hover {
     background: #FEF2F2;
-    color: #EF4444;
     border-color: #FCA5A5;
 }
 

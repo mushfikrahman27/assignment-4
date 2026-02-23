@@ -13,40 +13,46 @@ let jobApplications = [
  
 let currentFilter = 'all';
 
- 
 function renderDashboard() {
     const listElement = document.getElementById('dynamic-content-area');
     
-     
+
     const displayList = jobApplications.filter(job => 
         currentFilter === 'all' ? true : job.status === currentFilter
     );
- 
+
+    
     document.getElementById('total-val').innerText = jobApplications.length;
     document.getElementById('interview-val').innerText = jobApplications.filter(j => j.status === 'interview').length;
     document.getElementById('rejected-val').innerText = jobApplications.filter(j => j.status === 'rejected').length;
     
- 
     document.getElementById('job-count-label').innerText = `${displayList.length} jobs`;
 
- 
-    if (displayList.length === 0)
-         {
+    if (displayList.length === 0) {
         listElement.innerHTML = `
             <div class="empty-state">
                 <img src="https://cdn-icons-png.flaticon.com/512/10531/10531853.png" class="empty-img" alt="No jobs">
                 <h2 class="empty-title">No jobs available</h2>
-                <p class="empty-subtitle">Check back soon for new job opportunities in the ${currentFilter} category.</p>
+                <p class="empty-subtitle">Check back soon for new job opportunities.</p>
             </div>`;
         return;
     }
- 
-    listElement.innerHTML = displayList.map(item => `
-        <article class="job-card">
-            <div class="trash-icon" title="Remove Application" onclick="removeEntry('${item.id}')">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
-            </div>
-            
+
+  listElement.innerHTML = displayList.map(item => `
+    <article class="job-card" style="position: relative;">
+
+        <!-- TRASH ICON (ALWAYS VISIBLE) -->
+        <div class="trash-icon"
+             onclick="removeEntry('${item.id}')"
+             style="position:absolute; top:15px; right:15px; z-index:100;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                 stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6
+                         m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            </svg>
+        </div>
+
             <header>
                 <h4 class="company-name">${item.company}</h4>
                 <p class="role-title">${item.position}</p>
@@ -76,7 +82,6 @@ function renderDashboard() {
     `).join('');
 }
 
- 
 function updateJobStatus(targetId, targetState) {
     const targetJob = jobApplications.find(j => j.id === targetId);
     
@@ -90,12 +95,12 @@ function updateJobStatus(targetId, targetState) {
 }
 
  
-function removeEntry(targetId)
- {
+ 
+function removeEntry(targetId) {
     jobApplications = jobApplications.filter(j => j.id !== targetId);
     renderDashboard();
 }
- 
+
 
 document.getElementById('tabGroup').addEventListener('click', (event) => {
     if (event.target.classList.contains('tab-btn')) {
