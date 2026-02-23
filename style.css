@@ -82,14 +82,19 @@ body {
      background: #E6E7E9; 
      width: 100%; }
  
-.available-jobs-header {
+.available-jobs-header
+ {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 24px;
 }
 
-.tab-container { display: flex; gap: 8px; margin-bottom: 16px; }
+.tab-container 
+{ display: flex; 
+    gap: 8px;
+     margin-bottom: 16px;
+     }
 
 .tab-btn {
     padding: 8px 12px;
@@ -159,9 +164,12 @@ position: absolute;
     text-align: center;
 }
 
-.empty-img { width: 100px; 
+.empty-img 
+{
+     width: 100px; 
     height: 100px;
-     margin-bottom: 20px; }
+     margin-bottom: 20px;
+     }
 
 
 .empty-title { 
@@ -172,7 +180,8 @@ position: absolute;
 
 .empty-subtitle { 
     font-size: 16px;
-     color: var(--gray-text); }
+     color: var(--gray-text);
+     }
 
 .card-actions { 
     display: flex;
