@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
 
+
 :root {
     --primary-black: #002C5C;
     --gray-text: #64748B;
@@ -9,7 +10,9 @@
     --white: #FFFFFF;
 }
 
+
 body {
+
     margin: 0;
     font-family: 'Geist', sans-serif;
     background: var(--bg-main);
@@ -54,7 +57,6 @@ body {
     font-weight: 500;
     color: var(--dark-gray);
 }
-
 .card-value {
     font-size: 24px;
     font-weight: 700;
