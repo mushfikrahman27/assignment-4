@@ -200,9 +200,12 @@ position: absolute;
 }
 
 
-.btn-interview { color: #10B981; 
-    border-color: #10B981; }
+.btn-interview
+ { color: #10B981; 
+    border-color: #10B981;
+ }
 
 
-.btn-rejected { color: #EF4444; 
+.btn-rejected
+ { color: #EF4444; 
     border-color: #EF4444; }

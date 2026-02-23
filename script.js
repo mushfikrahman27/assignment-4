@@ -30,7 +30,8 @@ function renderDashboard() {
     document.getElementById('job-count-label').innerText = `${displayList.length} jobs`;
 
  
-    if (displayList.length === 0) {
+    if (displayList.length === 0)
+         {
         listElement.innerHTML = `
             <div class="empty-state">
                 <img src="https://cdn-icons-png.flaticon.com/512/10531/10531853.png" class="empty-img" alt="No jobs">
@@ -95,7 +96,6 @@ function removeEntry(targetId)
     renderDashboard();
 }
  
-
 
 document.getElementById('tabGroup').addEventListener('click', (event) => {
     if (event.target.classList.contains('tab-btn')) {
